@@ -223,7 +223,7 @@ function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localSto
 function nouvelEtat(){
   return {
     step:0,
-    opticien:store("novax.opticien")||"", telephone:store("novax.tel")||"", patient:"", notes:"",
+    opticien:store("novax.opticien")||"", patient:"", notes:"",
     yeux:"both",
     od:{sph:"0",cyl:"0",axe:"",add:"",ep:"",h:""},
     og:{sph:"0",cyl:"0",axe:"",add:"",ep:"",h:""},
@@ -307,7 +307,7 @@ function vPuissance(){
   return '<h2>Puissance</h2><p class="sub">Saisissez la prescription du porteur.</p>'+
   '<div class="card">'+
     '<div class="field"><label class="f">Opticien / magasin</label><input type="text" id="opticien" autocomplete="organization" placeholder="Nom de votre magasin" value="'+esc(S.opticien)+'"></div>'+
-    '<div class="grid2"><div class="field"><label class="f">Téléphone (facultatif)</label><input type="tel" id="telephone" placeholder="Votre numéro" value="'+esc(S.telephone)+'"></div>'+
+    '<div class="grid2" style="grid-template-columns:1fr">'+
     '<div class="field"><label class="f">Réf. / nom du porteur</label><input type="text" id="patient" placeholder="ex. M. Diallo" value="'+esc(S.patient)+'"></div></div>'+
     '<p class="hint" style="margin:0">Commande systématique d’une paire (OD + OG).</p></div>'+
   yeuxActifs().map(vOeil).join("")+
@@ -405,7 +405,7 @@ function vEnvoi(){
   var L=lignes(), v=verre();
   var h='<h2>Récapitulatif</h2><p class="sub">Vérifiez la commande avant l’envoi.</p>';
   h+='<div class="card"><h3>Opticien<button class="edit" data-go="0">Modifier</button></h3><dl class="kv"><dt>Date</dt><dd>'+dateCourte+"</dd><dt>Opticien</dt><dd>"+esc(S.opticien||"—")+"</dd>"+
-     (S.telephone?"<dt>Téléphone</dt><dd>"+esc(S.telephone)+"</dd>":"")+"<dt>Porteur</dt><dd>"+esc(S.patient||"—")+"</dd></dl></div>";
+     "<dt>Porteur</dt><dd>"+esc(S.patient||"—")+"</dd></dl></div>";
   h+='<div class="card"><h3>Prescription<button class="edit" data-go="0">Modifier</button></h3><table class="rx"><tr><th></th><th>SPH</th><th>CYL</th><th>AXE</th><th>ADD</th></tr>';
   yeuxActifs().forEach(function(e){var o=S[e];
     h+="<tr><td>"+e.toUpperCase()+"</td><td>"+dioptrie(o.sph)+"</td><td>"+dioptrie(o.cyl)+"</td><td>"+(o.axe!==""?esc(o.axe)+"°":"—")+"</td><td>"+(o.add?dioptrie(o.add):"—")+"</td></tr>";
@@ -440,7 +440,6 @@ function vEnvoi(){
 var bind={
   0:function(){
     $("#opticien").oninput=function(){S.opticien=this.value;store("novax.opticien",this.value)};
-    $("#telephone").oninput=function(){S.telephone=this.value;store("novax.tel",this.value)};
     $("#patient").oninput=function(){S.patient=this.value};
     document.querySelectorAll("[data-eye]").forEach(function(el){
       var f=function(){S[el.dataset.eye][el.dataset.k]=el.value;if(el.dataset.k==="axe"||el.dataset.k==="cyl"){delete errors[el.dataset.eye+"axe"];var ax=$('[data-eye="'+el.dataset.eye+'"][data-k="axe"]');ax.classList.remove("err");ax.closest(".card").querySelector(".msg-err").classList.remove("show")}};
@@ -534,7 +533,6 @@ function message(){
   out.push("*① OPTICIEN*");
   out.push(T);
   out.push(kv("Magasin",S.opticien||"—"));
-  if(S.telephone)out.push(kv("Téléphone",S.telephone));
   out.push(kv("Porteur",S.patient||"—"));
   out.push(T);
   out.push("");
