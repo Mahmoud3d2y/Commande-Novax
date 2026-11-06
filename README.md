@@ -11,7 +11,7 @@ Application hors ligne pour aider les opticiens à passer leurs commandes de ver
 
 ## Prix
 
-Les prix viennent du fichier `data/TARIF NOVAX 2025 CFA version 1.numbers`. Ils sont **par œil**. Le total = (verre + traitement + coloration + options) × nombre d'yeux commandés. Les cases vides ou à 0 du tarif sont considérées comme non disponibles ; les options sans prix sont marquées « sur devis ».
+Les prix viennent du fichier `data/TARIF NOVAX 2025 CFA version 1.numbers`. Ils sont **par œil** dans le tarif ; l’app affiche directement le prix de la paire (ou d’un verre si un seul œil est commandé). Le total = (verre + traitement + coloration + options) × nombre d'yeux commandés. Les cases vides ou à 0 du tarif sont considérées comme non disponibles ; les options sans prix sont marquées « sur devis ».
 
 ## Mettre à jour le tarif
 
