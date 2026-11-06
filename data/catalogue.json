@@ -1,0 +1,2394 @@
+{
+ "source": "TARIF NOVAX 2025 CFA version 1.numbers",
+ "devise": "CFA",
+ "verres": [
+  {
+   "id": "RX-2",
+   "nom": "TRION3D 2.0",
+   "famille": "Progressif",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 29700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 44900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 34200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 41800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 41800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 51700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 70700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 52500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 52500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 63100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 39600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 52500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 66200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 54000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 61600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 75300
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 87400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 105700
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 39600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 49400
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 59300
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 49400
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 79100
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 63100
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 72200
+    }
+   ]
+  },
+  {
+   "id": "RX-3",
+   "nom": "MATRIX",
+   "famille": "Progressif",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 22800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 40300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 26600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 35800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 37300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 44900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 66900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 47900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 47900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 60100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 34200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 43400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 63100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 44900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 56300
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 72200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 83600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 102600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 31200
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 41800
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 52500
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 44900
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 66900
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 57800
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 66900
+    }
+   ]
+  },
+  {
+   "id": "RX-4",
+   "nom": "GENIUS",
+   "famille": "Progressif",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 18300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 35800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 21300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 29700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 31200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 40300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 63100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 44900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 44900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 57000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 32000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 35800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 60100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 37300
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 51000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 69200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 79800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 99600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 25100
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 34200
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 47200
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 40300
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 60100
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 54000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 62400
+    }
+   ]
+  },
+  {
+   "id": "RX-5",
+   "nom": "VENTRO",
+   "famille": "Progressif",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 15200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 19000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 27400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 28200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 35800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 41800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 41800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 27400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 31200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 57000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 31200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 45600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 66200
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 22800
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 29700
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 41100
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 35800
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 57000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 49400
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 57000
+    }
+   ]
+  },
+  {
+   "id": "RX-6",
+   "nom": "NOVUM NG",
+   "famille": "Progressif",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 11400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 16000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 23600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 23600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 31200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 20600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 25100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 26600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 39600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 19000
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 27400
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 35800
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 32000
+    }
+   ]
+  },
+  {
+   "id": "RX-7",
+   "nom": "Ecoview",
+   "famille": "Progressif",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 9900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 11400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 19000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Sunmax Fast",
+     "prix": 12000
+    }
+   ]
+  },
+  {
+   "id": "RX-8",
+   "nom": "OFFICIENT",
+   "famille": "Dégressif",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 15200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 29700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 17500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 24400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 27400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 33500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 60100
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 20600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 28200
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 39600
+    }
+   ]
+  },
+  {
+   "id": "RX-9",
+   "nom": "MYOPIX",
+   "famille": "Unifocal",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 29700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 34200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 41800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 43400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 54800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 71500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 49400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 59280
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 64600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 71500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 94300
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 44100
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 47900
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 63100
+    }
+   ]
+  },
+  {
+   "id": "RX-10",
+   "nom": "ASFERA",
+   "famille": "Unifocal",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 11400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 26600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 14500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 20600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 22100
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 31200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 54000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 44900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 44900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 57000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 22800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 29700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 63100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 29700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 43400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 68400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 72200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 95000
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 16000
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 25100
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 38000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 31200
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 60100
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 44900
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 53200
+    }
+   ]
+  },
+  {
+   "id": "RX-11",
+   "nom": "SV",
+   "famille": "Unifocal",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 8400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 22100
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 11400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 16800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 19000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 25900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 45600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 41100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 41100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 51000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Sunmax Fast",
+     "prix": 12200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 18300
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 25100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 57000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 26600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 36500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 61600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 63100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 82900
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 13000
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 20600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 32000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 25900
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 57000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 37300
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 44900
+    }
+   ]
+  },
+  {
+   "id": "RX-12",
+   "nom": "Biconvex/Biconcanve",
+   "famille": "Unifocal",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 44900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 75300
+    }
+   ]
+  },
+  {
+   "id": "RX-13",
+   "nom": "Lenticular",
+   "famille": "Unifocal",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 33500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 56300
+    }
+   ]
+  },
+  {
+   "id": "RX-14",
+   "nom": "BIFOCAL RS28-40-60",
+   "famille": "Bifocal",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 17500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 32000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 20600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 25900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 28200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 35800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 57000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 51000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 51000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 60100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 28200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 35000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 64600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 35000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 47200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 72200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 79800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 102600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 22100
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 30400
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 42600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 35800
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 64600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 47900
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 55500
+    }
+   ]
+  },
+  {
+   "id": "RX-15",
+   "nom": "BIFOCAL D28",
+   "famille": "Bifocal",
+   "gamme": "RX",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 11400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 47900
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-2",
+   "nom": "Synthesis",
+   "famille": "Progressif",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 133000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 154000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 136000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 145000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 148200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 154000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 194000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 200000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 200000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 245000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 245000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 254000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 315000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 142000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 239000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 163000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 178000
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-3",
+   "nom": "NUCLEO 5D",
+   "famille": "Progressif",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 57000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 87400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 75200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 78300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 95000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 90400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 114700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 111700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 126900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 140600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 82800
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 104000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 117800
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-4",
+   "nom": "Nucleo Sport - Drive",
+   "famille": "Progressif",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 58500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 88900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 76700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 79800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 96500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 93500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 117800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 114700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 129900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 143600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 84300
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 105600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 119300
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-5",
+   "nom": "Nucleo Pilot",
+   "famille": "Progressif",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 58500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 88900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 76700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 79800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 96500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 93500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 117800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 114700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 129900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 143600
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-6",
+   "nom": "Nucleo Office",
+   "famille": "Progressif",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 49400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 64600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 67600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 72200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 90400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 90400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 114700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 111700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 126900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 140600
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-7",
+   "nom": "Nucleo SV - Double Aspherical",
+   "famille": "Unifocal",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 31100
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 40300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 67600
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-8",
+   "nom": "Nexus 4D",
+   "famille": "Progressif",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 37300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 55500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 43400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 54000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 57000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 64600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 78300
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 61600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 61600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 72200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 49400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 64600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 79800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 69200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 79800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 96600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 95000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 117800
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 49400
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 61600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 73800
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 58600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 99600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 75300
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 87400
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-9",
+   "nom": "Nucleo Antifatique",
+   "famille": "Unifocal",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 49400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 63100
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 79800
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-10",
+   "nom": "Drive On / Sportive PAL",
+   "famille": "Progressif",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 32700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 49400
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 38000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 47200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 47900
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 57000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 74500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 55500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 55500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 66900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 44100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 57000
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 69200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 60100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 69200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 84400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 90500
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 109500
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 44100
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 54800
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 65400
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 54000
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 87400
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 68400
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 79100
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-11",
+   "nom": "Serenity",
+   "famille": "Unifocal",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 13700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 28200
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 16000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 21300
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 25100
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 33500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 58600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 47900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 47900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 58600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 25100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 34200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 64600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 35800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 46400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 69200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 78300
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 98100
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 16800
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 25900
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 41100
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 37300
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 63100
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 47900
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 57800
+    }
+   ]
+  },
+  {
+   "id": "Nouveaux produits-12",
+   "nom": "Drive On / Sportive RX",
+   "famille": "Unifocal",
+   "gamme": "Nouveaux produits",
+   "nouveau": true,
+   "matieres": [
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.50",
+     "prix": 14500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.53 Trivex",
+     "prix": 29700
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.58",
+     "prix": 17500
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 (MR-8)",
+     "prix": 22800
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.61 Q-vex",
+     "prix": 26600
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.67 (MR-10)",
+     "prix": 35000
+    },
+    {
+     "groupe": "Blanc (clair)",
+     "matiere": "1.74",
+     "prix": 60100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Trans.Brown/Gray",
+     "prix": 49400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.50 Xtractive Trans. Gray",
+     "prix": 49400
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.53 Trivex Trans. Gray",
+     "prix": 60100
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.58 Wizard - EON",
+     "prix": 26600
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 (MR-8) Wizard - EON",
+     "prix": 35800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Trans. Brown/Gray",
+     "prix": 66200
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.61 Q-vex Wizard - EON",
+     "prix": 37300
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 (MR-10) Wizard - EON",
+     "prix": 47900
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.67 Trans. Brown/Gray",
+     "prix": 70700
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Wizard - EON",
+     "prix": 79800
+    },
+    {
+     "groupe": "Photochromique",
+     "matiere": "1.74 Trans. Gray",
+     "prix": 99600
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.58 Blockage",
+     "prix": 18300
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.61 Blockage",
+     "prix": 27400
+    },
+    {
+     "groupe": "Filtre lumière bleue",
+     "matiere": "1.67 Blockage",
+     "prix": 42600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.50 Polarized Brown/Gray",
+     "prix": 38800
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.5 Drivewear (polarized transitions)",
+     "prix": 64600
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.61 Polarized Brown/Gray",
+     "prix": 49400
+    },
+    {
+     "groupe": "Polarisé",
+     "matiere": "1.67 Polarized Brown/Gray",
+     "prix": 59300
+    }
+   ]
+  },
+  {
+   "id": "stock",
+   "nom": "Verres de stock",
+   "famille": "Stock (unifocal)",
+   "gamme": "Stock",
+   "nouveau": false,
+   "matieres": [
+    {
+     "groupe": "1.50",
+     "matiere": "1.50 · Ø65/70 · SPH +4.00 | -6.00 · CYL 2",
+     "prix": 1000
+    },
+    {
+     "groupe": "1.50",
+     "matiere": "1.50 · Ø65/70 · SPH +4.00 | -6.00 · CYL 3",
+     "prix": 1900
+    },
+    {
+     "groupe": "1.50",
+     "matiere": "1.50 · Ø60 · SPH +3.00 | +6.00 · CYL 2",
+     "prix": 1400
+    },
+    {
+     "groupe": "1.50",
+     "matiere": "1.50 · Ø55 · SPH +4.00 | +8.00 · CYL 2",
+     "prix": 2000
+    },
+    {
+     "groupe": "1.58 Multi AR",
+     "matiere": "1.58 Multi AR · Ø65/70 · SPH +3.00 | -6.00 · CYL 2",
+     "prix": 1400
+    },
+    {
+     "groupe": "1.58 Multi AR",
+     "matiere": "1.58 Multi AR · Ø65/70 · SPH +3.00 | -6.00 · CYL 3",
+     "prix": 2500
+    },
+    {
+     "groupe": "1.58 Multi AR",
+     "matiere": "1.58 Multi AR · Ø60 · SPH +3.25 | +6.00 · CYL 2",
+     "prix": 2500
+    },
+    {
+     "groupe": "1.58 Multi AR",
+     "matiere": "1.58 Multi AR · Ø55 · SPH +4.00 | +8.00 · CYL 2",
+     "prix": 3000
+    },
+    {
+     "groupe": "1.58 SMI PİXARUV",
+     "matiere": "1.58 SMI PİXARUV · Ø65/70 · SPH +4.00 | -4.00 · CYL 2",
+     "prix": 4250
+    },
+    {
+     "groupe": "1.58 Urban PixarDrive",
+     "matiere": "1.58 Urban PixarDrive · Ø65/70 · SPH +4.00 | -4.00 · CYL 2",
+     "prix": 5000
+    },
+    {
+     "groupe": "1.58 Blockage",
+     "matiere": "1.58 Blockage · Ø65/70 · SPH +4.00 | -4.00 · CYL 2",
+     "prix": 4000
+    },
+    {
+     "groupe": "1.58 Blockage PixAR BLUV",
+     "matiere": "1.58 Blockage PixAR BLUV · Ø65/70 · SPH +4.00 | -4.00 · CYL 2",
+     "prix": 4500
+    },
+    {
+     "groupe": "1.58 Wizard EON Pixar",
+     "matiere": "1.58 Wizard EON Pixar · Ø65/70 · SPH +4.00 | -4.00 · CYL 2",
+     "prix": 9200
+    },
+    {
+     "groupe": "1.58 Sunmax Fast Multi AR",
+     "matiere": "1.58 Sunmax Fast Multi AR · Ø65/70 · SPH +4.00 | -4.00 · CYL 2",
+     "prix": 4400
+    },
+    {
+     "groupe": "1.57 QVEX",
+     "matiere": "1.57 QVEX · Ø65/70 · SPH +4.00 | -4.00 · CYL 2",
+     "prix": 5300
+    },
+    {
+     "groupe": "1.6 AS Multi AR",
+     "matiere": "1.6 AS Multi AR · Ø75 · SPH -2.00 | -6.00 · CYL 2",
+     "prix": 5000
+    },
+    {
+     "groupe": "1.67 AS Multi AR",
+     "matiere": "1.67 AS Multi AR · Ø75 · SPH -3.00 | -14.00 · CYL 2",
+     "prix": 8000
+    }
+   ]
+  }
+ ],
+ "traitements": [
+  {
+   "nom": "PIXAR UV",
+   "prix": 3000
+  },
+  {
+   "nom": "PIXAR BLUV",
+   "prix": 7500
+  },
+  {
+   "nom": "PIXAR CONTRAST",
+   "prix": 11000
+  },
+  {
+   "nom": "PIXAR DRIVE",
+   "prix": 11000
+  },
+  {
+   "nom": "PIXAR AQUA",
+   "prix": 11000
+  },
+  {
+   "nom": "PIXAR ANTIFOG",
+   "prix": 15000
+  },
+  {
+   "nom": "MIRROR COATING RX",
+   "prix": 15000
+  }
+ ],
+ "colorations": [
+  {
+   "nom": "Teinte unie",
+   "groupe": "Teintes",
+   "prix": 4500,
+   "teinte": true
+  },
+  {
+   "nom": "Teinte dégradée",
+   "groupe": "Teintes",
+   "prix": 6000,
+   "teinte": true
+  },
+  {
+   "nom": "Teinte sur échantillon",
+   "groupe": "Teintes",
+   "prix": 6000,
+   "teinte": true
+  },
+  {
+   "nom": "Antifar (UV400)",
+   "groupe": "Teintes",
+   "prix": 12000,
+   "teinte": false
+  },
+  {
+   "nom": "Yellow Life",
+   "groupe": "Filtres thérapeutiques",
+   "prix": 15000,
+   "teinte": false
+  },
+  {
+   "nom": "Orange Life",
+   "groupe": "Filtres thérapeutiques",
+   "prix": 15000,
+   "teinte": false
+  }
+ ],
+ "options": [
+  {
+   "nom": "MDP (point milieu)",
+   "prix": null
+  },
+  {
+   "nom": "Diamètre ovale",
+   "prix": null
+  },
+  {
+   "nom": "Réduction de diamètre",
+   "prix": null
+  },
+  {
+   "nom": "Cylindre > 6",
+   "prix": null
+  },
+  {
+   "nom": "Prisme",
+   "prix": 6000
+  },
+  {
+   "nom": "Décentrement",
+   "prix": null
+  },
+  {
+   "nom": "Base / épaisseur spéciale",
+   "prix": null
+  },
+  {
+   "nom": "Calibrage (compensation d'épaisseur)",
+   "prix": null
+  },
+  {
+   "nom": "Fabrication selon monture",
+   "prix": null
+  },
+  {
+   "nom": "Verre dépoli",
+   "prix": 7500
+  },
+  {
+   "nom": "Taillage standard",
+   "prix": 7500
+  },
+  {
+   "nom": "Taillage spécial",
+   "prix": 15000
+  },
+  {
+   "nom": "Taillage lunettes sport",
+   "prix": 15000
+  },
+  {
+   "nom": "Gravure laser personnalisée",
+   "prix": 6000
+  },
+  {
+   "nom": "Filtres thérapeutiques spéciaux",
+   "prix": 15000
+  },
+  {
+   "nom": "FL 41 anti-migraine",
+   "prix": 15000
+  }
+ ]
+}
