@@ -1,0 +1,40 @@
+{
+ "_note": "Descriptions courtes affichées dans l'app. Modifiez librement, puis lancez : python3 tools/build.py",
+ "verres": {
+  "TRION3D 2.0": "Progressif haut de gamme : champs de vision larges et adaptation rapide.",
+  "MATRIX": "Progressif premium : vision nette et confortable à toutes les distances.",
+  "GENIUS": "Progressif polyvalent, très bon rapport qualité-prix.",
+  "VENTRO": "Progressif confort pour un usage quotidien.",
+  "NOVUM NG": "Progressif standard, design classique.",
+  "Ecoview": "Progressif d'entrée de gamme, économique.",
+  "OFFICIENT": "Dégressif pour le travail de près et l'écran (bureau, lecture).",
+  "MYOPIX": "Unifocal pour freiner l'évolution de la myopie chez l'enfant.",
+  "ASFERA": "Unifocal asphérique : verre plus fin et plus plat, moins de déformation.",
+  "SV": "Unifocal standard (simple vision).",
+  "Biconvex/Biconcanve": "Unifocal spécial pour fortes corrections (biconvexe / biconcave).",
+  "Lenticular": "Unifocal lenticulaire pour très fortes corrections, verre allégé.",
+  "BIFOCAL RS28-40-60": "Bifocal à segment arrondi : vision de loin et de près.",
+  "BIFOCAL D28": "Bifocal à segment droit de 28 mm : loin et près bien séparés.",
+  "Synthesis": "Nouveau progressif très haut de gamme, entièrement personnalisé.",
+  "NUCLEO 5D": "Nouveau progressif premium, design numérique avancé.",
+  "Nucleo Sport - Drive": "Progressif conçu pour la conduite et le sport.",
+  "Nucleo Pilot": "Progressif pour la conduite : vision de loin et tableau de bord.",
+  "Nucleo Office": "Progressif d'intérieur pour le bureau et l'écran.",
+  "Nucleo SV - Double Aspherical": "Unifocal double asphérique : finesse et netteté jusqu'aux bords.",
+  "Nexus 4D": "Progressif numérique, bon équilibre confort / prix.",
+  "Nucleo Antifatique": "Unifocal avec petite aide en vision de près contre la fatigue visuelle.",
+  "Drive On / Sportive PAL": "Progressif pour la conduite et les activités sportives.",
+  "Serenity": "Unifocal confort pour un usage quotidien.",
+  "Drive On / Sportive RX": "Unifocal pour la conduite et les activités sportives.",
+  "Verres de stock": "Verres unifocaux finis, disponibles en stock : livraison rapide."
+ },
+ "traitements": {
+  "PIXAR UV": "Anti-reflet avec protection UV.",
+  "PIXAR BLUV": "Anti-reflet + filtre lumière bleue (écrans) et UV.",
+  "PIXAR CONTRAST": "Anti-reflet qui renforce les contrastes.",
+  "PIXAR DRIVE": "Anti-reflet pour la conduite : moins d'éblouissement, surtout la nuit.",
+  "PIXAR AQUA": "Anti-reflet hydrophobe : l'eau et les traces glissent, nettoyage facile.",
+  "PIXAR ANTIFOG": "Anti-reflet antibuée.",
+  "MIRROR COATING RX": "Traitement miroir (effet miroir sur verres solaires)."
+ }
+}
