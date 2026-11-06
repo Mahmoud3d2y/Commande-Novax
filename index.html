@@ -150,6 +150,12 @@ table.rx tr:last-child td{border-bottom:0}
 .resume .r u{text-decoration:none;color:var(--pri);font-size:13px;font-weight:600;flex:none}
 .card h3 .edit{margin-left:auto;border:0;background:none;color:var(--pri);font-weight:600;font-size:13.5px;cursor:pointer;padding:4px 0}
 .preview{background:#e9f3ef;border-radius:12px;padding:12px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;margin:8px 0 0;color:#22372f}
+.catban{display:flex;align-items:center;gap:10px;border-radius:12px;padding:12px 14px;margin-bottom:12px;font-weight:700;letter-spacing:.3px;font-size:15px}
+.catban span{font-size:20px}
+.catban.blanc{background:#f4f7f9;border:1.5px solid #cfdbe2;color:#2b4250}
+.catban.photo{background:#efe9f7;border:1.5px solid #c9b6e4;color:#4b3470}
+.catban.bleu{background:#e6f0fb;border:1.5px solid #a9c8ec;color:#1f4f86}
+.catban.polar{background:#f6efe6;border:1.5px solid #dcc6a6;color:#6b4a1e}
 .foot{color:var(--muted);font-size:11.5px;text-align:center;margin-top:18px}
 
 @media (min-width:600px){
@@ -229,7 +235,7 @@ function nouvelEtat(){
     og:{sph:"0",cyl:"0",axe:"",add:"",ep:"",h:""},
     famille:null, verreId:null, matiere:null,
     traitement:-1, options:[],
-    coloration:-1, couleur:"Gris", intensite:"50 %"
+    coloration:-1, couleur:"Gris", intensite:"50 %", teinteVerre:null
   };
 }
 var S = nouvelEtat();
@@ -241,9 +247,24 @@ function verre(){return CAT.verres.filter(function(v){return v.id===S.verreId})[
 function matiereSel(){var v=verre();return v&&S.matiere!=null?v.matieres[S.matiere]:null}
 function besoinAdd(){var f=S.famille;return f==="Progressif"||f==="Dégressif"||f==="Bifocal"}
 
+var CATS={
+  "Blanc (clair)":{nom:"VERRE BLANC",court:"Blanc",emoji:"⚪",cls:"blanc"},
+  "Photochromique":{nom:"PHOTOCHROMIQUE",court:"Photochromique",emoji:"🌗",cls:"photo"},
+  "Filtre lumière bleue":{nom:"FILTRE LUMIÈRE BLEUE",court:"Lumière bleue",emoji:"🔵",cls:"bleu"},
+  "Polarisé":{nom:"POLARISÉ (SOLAIRE)",court:"Polarisé",emoji:"🕶️",cls:"polar"}
+};
+function categorie(){
+  var v=verre(),m=matiereSel();if(!m)return null;var g=m.groupe;
+  if(v.famille.indexOf("Stock")===0){var t=m.matiere;g=/wizard|sunmax|trans/i.test(t)?"Photochromique":(/blockage|bluv/i.test(t)?"Filtre lumière bleue":"Blanc (clair)")}
+  return CATS[g]||{nom:String(g).toUpperCase(),court:g,emoji:"▪️",cls:"blanc"};
+}
+function choixTeinteVerre(){var m=matiereSel();return !!(m&&/brown\s*\/\s*gray/i.test(m.matiere))}
+function teinteVerre(){var m=matiereSel();if(!m)return null;if(choixTeinteVerre())return S.teinteVerre;
+  if(/gray/i.test(m.matiere))return "Gris";if(/brown/i.test(m.matiere))return "Brun";return null}
+function txtCat(){var c=categorie();if(!c)return "";var t=teinteVerre();return c.nom+(t?" — "+t.toUpperCase():"")}
 function lignes(){
   var n=nbYeux(), L=[], m=matiereSel(), v=verre();
-  if(m) L.push({cle:"Verre",nom:v.nom,detail:m.matiere+(v.famille.indexOf("Stock")<0?" · "+m.groupe:""),pu:m.prix,q:n});
+  if(m) L.push({cle:"Verre",nom:v.nom,detail:m.matiere+" · "+txtCat(),pu:m.prix,q:n});
   if(S.traitement>=0){var t=CAT.traitements[S.traitement];L.push({cle:"Traitement",nom:t.nom,detail:"",pu:t.prix||0,q:n,devis:!t.prix})}
   if(S.coloration>=0){var c=CAT.colorations[S.coloration];L.push({cle:"Coloration",nom:c.nom,detail:c.teinte?(S.couleur+" · "+S.intensite):"",pu:c.prix||0,q:n,devis:!c.prix})}
   S.options.forEach(function(i){var o=CAT.options[i];L.push({cle:"Option",nom:o.nom,detail:"",pu:o.prix||0,q:n,devis:!o.prix})});
@@ -275,7 +296,7 @@ function majBas(){
   $("#prev").style.visibility=S.step===0?"hidden":"visible";
   var nx=$("#next");
   if(page()===4){nx.style.display="none"}else{nx.style.display="";nx.innerHTML='Suivant <span aria-hidden="true">›</span>'}
-  nx.disabled=(S.step===1&&!matiereSel())||(S.step===2&&S.traitement<0);
+  nx.disabled=(S.step===1&&(!matiereSel()||(choixTeinteVerre()&&!S.teinteVerre)))||(S.step===2&&S.traitement<0);
 }
 
 function optSelect(name,eye,vals,val,ph){
@@ -317,7 +338,7 @@ function vPuissance(){
 function pp(x){return x*nbYeux()}
 function unite(){return nbYeux()===2?"CFA la paire":"CFA (1 verre)"}
 function txtRx(e){var o=S[e];return e.toUpperCase()+" "+dioptrie(o.sph)+" ("+dioptrie(o.cyl)+(o.axe!==""?" à "+o.axe+"°":"")+")"+(o.add?" add "+dioptrie(o.add):"")}
-function txtVerre(){var v=verre(),m=matiereSel();if(!m)return null;return v.nom+" · "+(v.famille.indexOf("Stock")===0?m.matiere.split(" · ").slice(0,2).join(" · "):m.matiere)}
+function txtVerre(){var v=verre(),m=matiereSel();if(!m)return null;return [v.nom+" · "+(v.famille.indexOf("Stock")===0?m.matiere.split(" · ").slice(0,2).join(" · "):m.matiere),categorie().emoji+" "+txtCat()]}
 function txtTrait(){return S.traitement>=0?CAT.traitements[S.traitement].nom:"—"}
 function txtCol(){var c=S.coloration>=0?CAT.colorations[S.coloration]:null;return c?c.nom+(c.teinte?" · "+S.couleur+" "+S.intensite:""):"Sans coloration"}
 function resume(){
@@ -355,6 +376,12 @@ function vVerre(){
       h+='<button class="opt'+(S.matiere===i?" on":"")+'" data-m="'+i+'"><span class="dot"></span><span class="t"><b>'+esc(lab)+'</b></span><span class="p">'+fmt(pp(m.prix))+"<small>"+unite()+"</small></span></button>";
     });
     h+="</div></div>";
+    if(choixTeinteVerre()){
+      h+='<div class="card" id="tv"><label class="f">Couleur du verre (obligatoire)</label><div class="chips">'+
+        ["Gris","Brun"].map(function(x){return '<button class="chip'+(S.teinteVerre===x?" on":"")+'" data-x="'+x+'">'+x+"</button>"}).join("")+"</div></div>";
+    }
+    var cb=categorie();
+    if(cb)h+='<div class="catban '+cb.cls+'"><span>'+cb.emoji+"</span>"+esc(txtCat())+"</div>";
   } else {
     var list=CAT.verres.filter(function(v){return v.famille===S.famille});
     h+='<div class="opts">';
@@ -415,10 +442,10 @@ function vEnvoi(){
   if(mes.length)h+='<p class="hint">'+mes.map(function(e){return e.toUpperCase()+" : "+(S[e].ep?"½ EP "+esc(S[e].ep)+" mm":"")+(S[e].ep&&S[e].h?" · ":"")+(S[e].h?"hauteur "+esc(S[e].h)+" mm":"")}).join("<br>")+"</p>";
   h+="</div>";
   var cc=S.coloration>=0?CAT.colorations[S.coloration]:null;
-  h+='<div class="card"><h3>Verres<button class="edit" data-go="1">Modifier</button></h3><dl class="kv">'+
+  h+='<div class="card"><h3>Verres<button class="edit" data-go="1">Modifier</button></h3><div class="catban '+categorie().cls+'"><span>'+categorie().emoji+"</span>"+esc(txtCat())+'</div><dl class="kv">'+
      "<dt>Quantité</dt><dd>1 paire (OD + OG)</dd>"+
      "<dt>Type</dt><dd>"+esc(v.famille)+"</dd><dt>Verre</dt><dd>"+esc(v.nom)+(v.nouveau?' <span class="badge">NOUVEAU</span>':"")+"</dd>"+
-     "<dt>Matière</dt><dd>"+esc(matiereSel().matiere)+"</dd>"+(v.famille.indexOf("Stock")<0?"<dt>Catégorie</dt><dd>"+esc(matiereSel().groupe)+"</dd>":"")+
+     "<dt>Matière</dt><dd>"+esc(matiereSel().matiere)+"</dd>"+
      '<dt>Traitement</dt><dd><a href="#" class="linkbtn" data-go="2" style="padding:0">'+esc(txtTrait())+"</a></dd>"+
      (S.coloration>=0?'<dt>Coloration</dt><dd>'+esc(txtCol())+"</dd>":"")+
      (S.options.length?"<dt>Options</dt><dd>"+esc(S.options.map(function(i){return CAT.options[i].nom}).join(", "))+"</dd>":"")+"</dl></div>";
@@ -452,8 +479,9 @@ var bind={
     var chg=$("#chg");if(chg)chg.onclick=function(){S.verreId=null;S.matiere=null;S.grp=null;render()};
     var gp=$("#grp");if(gp)gp.onclick=function(ev){var b=ev.target.closest(".chip");if(!b)return;S.grp=b.dataset.g||null;render()};
     $("#view").querySelectorAll("[data-v]").forEach(function(b){b.onclick=function(){S.verreId=b.dataset.v;S.matiere=null;S.grp=null;render();window.scrollTo({top:0,behavior:"smooth"})}});
-    $("#view").querySelectorAll("[data-m]").forEach(function(b){b.onclick=function(){S.matiere=+b.dataset.m;
-      $("#view").querySelectorAll("[data-m]").forEach(function(x){x.classList.toggle("on",x===b)});majBas()}});
+    $("#view").querySelectorAll("[data-m]").forEach(function(b){b.onclick=function(){S.matiere=+b.dataset.m;S.teinteVerre=null;var y=window.scrollY;render();window.scrollTo(0,y);
+      if(choixTeinteVerre()){var tv=$("#tv");if(tv)tv.scrollIntoView({behavior:"smooth",block:"center"})}}});
+    var tv=$("#tv");if(tv)tv.onclick=function(ev){var b=ev.target.closest(".chip");if(!b)return;S.teinteVerre=b.dataset.x;var y=window.scrollY;render();window.scrollTo(0,y)};
   },
   2:function(){
     $("#trt").onclick=function(ev){var b=ev.target.closest(".opt");if(!b)return;S.traitement=+b.dataset.t;
@@ -500,13 +528,14 @@ function valider(step){
     if(Object.keys(errors).length){render();toast("Vérifiez l’axe");return false}
   }
   if(step===1&&!matiereSel()){toast("Choisissez un verre et une matière");return false}
+  if(step===1&&choixTeinteVerre()&&!S.teinteVerre){toast("Choisissez la couleur du verre : gris ou brun");return false}
   if(step===2&&S.traitement<0){toast("Choisissez un traitement");return false}
   if(step===1&&besoinAdd()&&!yeuxActifs().every(function(e){return S[e].add})){
     if(!confirm("Aucune addition n’est saisie pour un verre "+S.famille.toLowerCase()+". Continuer quand même ?"))return false;
   }
   return true;
 }
-function peutAller(i){for(var s=0;s<i;s++){if(s===1&&!matiereSel())return false;if(s===2&&S.traitement<0)return false}return true}
+function peutAller(i){for(var s=0;s<i;s++){if(s===1&&(!matiereSel()||(choixTeinteVerre()&&!S.teinteVerre)))return false;if(s===2&&S.traitement<0)return false}return true}
 function aller(i){S.step=i;render();window.scrollTo(0,0)}
 $("#next").onclick=function(){if(valider(S.step))aller(Math.min(STEPS.length-1,S.step+1))};
 $("#prev").onclick=function(){aller(Math.max(0,S.step-1))};
@@ -529,6 +558,11 @@ function message(){
   out.push("🧾 *COMMANDE NOVAX*");
   out.push("*N° "+numCache.n+"*");
   out.push("📅 "+dateCourte+" à "+heure());
+  var cat=categorie();
+  out.push("");
+  out.push("━━━━━━━━━━━━━━━━");
+  out.push(cat.emoji+" *"+txtCat()+"*");
+  out.push("━━━━━━━━━━━━━━━━");
   out.push("");
   out.push("*① OPTICIEN*");
   out.push(T);
@@ -556,8 +590,9 @@ function message(){
   out.push(kv("Quantité",qte));
   out.push(kv("Type",v.famille));
   out.push(kv("Verre",v.nom+(stock?"":" ("+v.gamme+")")));
-  out.push(kv("Matière",stock?m.matiere:m.matiere));
-  if(!stock)out.push(kv("Catégorie",m.groupe));
+  out.push(kv("Catégorie",">> "+cat.nom+" <<"));
+  if(teinteVerre())out.push(kv("Couleur",teinteVerre().toUpperCase()));
+  out.push(kv("Matière",m.matiere));
   out.push(kv("Traitement",S.traitement>=0?CAT.traitements[S.traitement].nom:"Aucun"));
   if(c)out.push(kv("Coloration",c.nom));
   if(c&&c.teinte){out.push(kv("Couleur",S.couleur));out.push(kv("Intensité",S.intensite))}
