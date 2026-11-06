@@ -271,7 +271,7 @@ function majBas(){
   $("#sumLbl").textContent="Total de la paire";
   $("#prev").style.visibility=S.step===0?"hidden":"visible";
   var nx=$("#next");
-  if(S.step===4){nx.style.display="none"}else{nx.style.display="";nx.innerHTML=(S.step===3?"Récapitulatif":esc(STEPS[S.step+1]))+' <span aria-hidden="true">›</span>'}
+  if(S.step===4){nx.style.display="none"}else{nx.style.display="";nx.innerHTML='Suivant <span aria-hidden="true">›</span>'}
   nx.disabled=(S.step===1&&!matiereSel())||(S.step===2&&S.traitement<0);
 }
 
