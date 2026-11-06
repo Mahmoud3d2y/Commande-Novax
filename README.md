@@ -21,4 +21,6 @@ python3 tools/extract_catalogue.py "data/TARIF NOVAX 2025 CFA version 1.numbers"
 python3 tools/build.py
 ```
 
+Les descriptions des verres et traitements sont dans `data/descriptions.json`.
+
 Puis changer `VERSION` dans `sw.js` pour que les téléphones récupèrent le nouveau tarif.
