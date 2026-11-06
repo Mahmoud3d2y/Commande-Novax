@@ -391,7 +391,7 @@ function vEnvoi(){
   h+='<tr class="total"><td>Total</td><td>'+cfa(total())+"</td></tr></table>"+
      (L.some(function(l){return l.devis})?'<p class="hint">Les éléments « sur devis » seront chiffrés par Novax.</p>':"")+"</div>";
   h+='<div class="card"><label class="f">Remarques (facultatif)</label><textarea id="notes" placeholder="Monture, diamètre, délai, instructions…">'+esc(S.notes)+"</textarea></div>";
-  h+='<div class="stack"><button class="btn wa" id="wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>Envoyer sur WhatsApp</button>'+
+  h+='<div class="stack"><a class="btn wa" id="wa" href="https://wa.me/" target="_blank" rel="noopener" style="text-decoration:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>Envoyer sur WhatsApp</a>'+
      '<button class="btn line" id="cp">Copier le message</button><button class="btn line" id="new">Nouvelle commande</button></div>'+
      '<p class="foot">Tarif : '+esc(CAT.source)+" · Prix en "+esc(CAT.devise)+"</p>";
   return h;
@@ -431,9 +431,19 @@ var bind={
   },
   4:function(){
     $("#notes").oninput=function(){S.notes=this.value};
-    $("#wa").onclick=function(){
-      var msg=message();
-      window.location.href="https://wa.me/?text="+encodeURIComponent(msg);
+    $("#wa").onclick=function(ev){
+      // Ne jamais quitter la page : sinon écran blanc (aperçus intégrés, hors ligne).
+      var msg=message(), txt=encodeURIComponent(msg);
+      var mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+      copier(msg,"Message copié. Si WhatsApp ne s’ouvre pas, collez-le dans la discussion.");
+      if(mobile){
+        // Ouvre directement l'app WhatsApp, fonctionne sans internet.
+        ev.preventDefault();
+        window.location.href="whatsapp://send?text="+txt;
+      } else {
+        // Sur ordinateur : wa.me dans un nouvel onglet, la commande reste affichée ici.
+        this.href="https://wa.me/?text="+txt;
+      }
     };
     $("#cp").onclick=function(){copier(message())};
     $("#new").onclick=function(){if(confirm("Effacer cette commande et en commencer une nouvelle ?")){S=nouvelEtat();errors={};numCache=null;render();window.scrollTo(0,0)}};
@@ -515,8 +525,8 @@ function message(){
   out.push("Merci de confirmer la réception de la commande.");
   return out.join("\n");
 }
-function copier(t){
-  var ok=function(){toast("Message copié")};
+function copier(t,info){
+  var ok=function(){toast(info||"Message copié")};
   if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok,function(){fallback()})}else fallback();
   function fallback(){var a=document.createElement("textarea");a.value=t;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(e){toast("Copie impossible")}document.body.removeChild(a)}
 }
