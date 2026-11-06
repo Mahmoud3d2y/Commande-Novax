@@ -200,7 +200,10 @@ table.rx tr:last-child td{border-bottom:0}
 (function(){
 "use strict";
 var CAT = window.CATALOGUE;
-var STEPS = ["Puissance","Verre","Traitement","Coloration","Envoi"];
+// Étape Coloration masquée pour le moment : pour la remettre, ajouter "Coloration" ici et 3 dans PAGES.
+var STEPS = ["Puissance","Verre","Traitement","Envoi"];
+var PAGES = [0,1,2,4];
+function page(){return PAGES[S.step]}
 var FAMILLES = ["Progressif","Dégressif","Unifocal","Bifocal","Stock (unifocal)"];
 var COULEURS = ["Gris","Brun","Vert","Bleu","Rose","Autre"];
 var INTENSITES = ["15 %","25 %","50 %","75 %","85 %"];
@@ -260,9 +263,9 @@ function render(){
     nav.appendChild(b);
   });
   var view=$("#view");
-  view.innerHTML='<div class="eyebrow">Étape '+(S.step+1)+' sur 5</div>'+[vPuissance,vVerre,vTraitement,vColoration,vEnvoi][S.step]();
+  view.innerHTML='<div class="eyebrow">Étape '+(S.step+1)+' sur '+STEPS.length+'</div>'+[vPuissance,vVerre,vTraitement,vColoration,vEnvoi][page()]();
   view.querySelectorAll("[data-go]").forEach(function(b){b.onclick=function(){aller(+b.dataset.go)}});
-  bind[S.step]&&bind[S.step]();
+  bind[page()]&&bind[page()]();
   majBas();
 }
 function majBas(){
@@ -271,7 +274,7 @@ function majBas(){
   $("#sumLbl").textContent="Total de la paire";
   $("#prev").style.visibility=S.step===0?"hidden":"visible";
   var nx=$("#next");
-  if(S.step===4){nx.style.display="none"}else{nx.style.display="";nx.innerHTML='Suivant <span aria-hidden="true">›</span>'}
+  if(page()===4){nx.style.display="none"}else{nx.style.display="";nx.innerHTML='Suivant <span aria-hidden="true">›</span>'}
   nx.disabled=(S.step===1&&!matiereSel())||(S.step===2&&S.traitement<0);
 }
 
@@ -417,7 +420,7 @@ function vEnvoi(){
      "<dt>Type</dt><dd>"+esc(v.famille)+"</dd><dt>Verre</dt><dd>"+esc(v.nom)+(v.nouveau?' <span class="badge">NOUVEAU</span>':"")+"</dd>"+
      "<dt>Matière</dt><dd>"+esc(matiereSel().matiere)+"</dd>"+(v.famille.indexOf("Stock")<0?"<dt>Catégorie</dt><dd>"+esc(matiereSel().groupe)+"</dd>":"")+
      '<dt>Traitement</dt><dd><a href="#" class="linkbtn" data-go="2" style="padding:0">'+esc(txtTrait())+"</a></dd>"+
-     '<dt>Coloration</dt><dd><a href="#" class="linkbtn" data-go="3" style="padding:0">'+esc(txtCol())+"</a></dd>"+
+     (S.coloration>=0?'<dt>Coloration</dt><dd>'+esc(txtCol())+"</dd>":"")+
      (S.options.length?"<dt>Options</dt><dd>"+esc(S.options.map(function(i){return CAT.options[i].nom}).join(", "))+"</dd>":"")+"</dl></div>";
   h+='<div class="card"><h3>Prix '+(nbYeux()===2?"de la paire":"(1 verre)")+'</h3><table class="lines">';
   L.forEach(function(l){
@@ -506,7 +509,7 @@ function valider(step){
 }
 function peutAller(i){for(var s=0;s<i;s++){if(s===1&&!matiereSel())return false;if(s===2&&S.traitement<0)return false}return true}
 function aller(i){S.step=i;render();window.scrollTo(0,0)}
-$("#next").onclick=function(){if(valider(S.step))aller(Math.min(4,S.step+1))};
+$("#next").onclick=function(){if(valider(S.step))aller(Math.min(STEPS.length-1,S.step+1))};
 $("#prev").onclick=function(){aller(Math.max(0,S.step-1))};
 
 /* ---------- Message WhatsApp ---------- */
@@ -558,7 +561,7 @@ function message(){
   out.push(kv("Matière",stock?m.matiere:m.matiere));
   if(!stock)out.push(kv("Catégorie",m.groupe));
   out.push(kv("Traitement",S.traitement>=0?CAT.traitements[S.traitement].nom:"Aucun"));
-  out.push(kv("Coloration",c?c.nom:"Aucune"));
+  if(c)out.push(kv("Coloration",c.nom));
   if(c&&c.teinte){out.push(kv("Couleur",S.couleur));out.push(kv("Intensité",S.intensite))}
   S.options.forEach(function(i,k){out.push(kv(k?"":"Options",CAT.options[i].nom))});
   out.push(T);
