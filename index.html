@@ -79,6 +79,8 @@ textarea{min-height:80px;resize:vertical}
 .opts{display:flex;flex-direction:column;gap:8px}
 .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;
   border-radius:12px;padding:13px 14px;cursor:pointer;transition:border-color .15s,background .15s;min-height:54px}
+.opt:focus{outline:none}
+.opt:focus-visible{outline:2px solid var(--pri-2);outline-offset:2px}
 .opt:active{transform:scale(.995)}
 .opt .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #b9cbd4;display:grid;place-items:center}
 .opt.multi .dot{border-radius:6px}
@@ -126,7 +128,7 @@ table.rx tr:last-child td{border-bottom:0}
 .bottom .in{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:10px}
 .sum{flex:1;min-width:0}
 .sum small{display:block;font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sum b{font-size:18px;font-variant-numeric:tabular-nums}
+.sum b{white-space:nowrap;font-size:18px;font-variant-numeric:tabular-nums}
 .btn{border:0;border-radius:12px;padding:0 18px;height:50px;font-weight:650;font-size:15.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .btn.pri{background:var(--pri);color:#fff}
 .btn.pri:disabled{background:#a9c2cc;cursor:not-allowed}
@@ -136,6 +138,18 @@ table.rx tr:last-child td{border-bottom:0}
 .stack{display:flex;flex-direction:column;gap:10px;margin-top:6px}
 .toast{position:fixed;left:50%;bottom:calc(96px + var(--safe-b));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:all .25s;z-index:30;max-width:90vw;text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.eyebrow{font-size:12px;font-weight:700;color:var(--pri-2);letter-spacing:.6px;text-transform:uppercase;margin:16px 2px 0}
+.eyebrow+h2{margin-top:2px}
+.resume{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:4px 14px;margin-bottom:16px}
+.resume .r{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);width:100%;background:none;border-left:0;border-right:0;border-top:0;text-align:left;cursor:pointer}
+.resume .r:last-child{border-bottom:0}
+.resume .r i{font-style:normal;flex:none;width:22px;height:22px;border-radius:50%;background:var(--mint-soft);color:#2e8a77;display:grid;place-items:center;font-size:12px;font-weight:700}
+.resume .r span{flex:1;min-width:0;font-size:13.5px}
+.resume .r span em{display:block;font-style:normal;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.resume .r span b{font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.resume .r u{text-decoration:none;color:var(--pri);font-size:13px;font-weight:600;flex:none}
+.card h3 .edit{margin-left:auto;border:0;background:none;color:var(--pri);font-weight:600;font-size:13.5px;cursor:pointer;padding:4px 0}
+.preview{background:#e9f3ef;border-radius:12px;padding:12px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;margin:8px 0 0;color:#22372f}
 .foot{color:var(--muted);font-size:11.5px;text-align:center;margin-top:18px}
 
 @media (min-width:600px){
@@ -246,7 +260,8 @@ function render(){
     nav.appendChild(b);
   });
   var view=$("#view");
-  view.innerHTML=[vPuissance,vVerre,vTraitement,vColoration,vEnvoi][S.step]();
+  view.innerHTML='<div class="eyebrow">Étape '+(S.step+1)+' sur 5</div>'+[vPuissance,vVerre,vTraitement,vColoration,vEnvoi][S.step]();
+  view.querySelectorAll("[data-go]").forEach(function(b){b.onclick=function(){aller(+b.dataset.go)}});
   bind[S.step]&&bind[S.step]();
   majBas();
 }
@@ -256,7 +271,7 @@ function majBas(){
   $("#sumLbl").textContent=nbYeux()===2?"Total estimé · 2 verres":"Total estimé · 1 verre";
   $("#prev").style.visibility=S.step===0?"hidden":"visible";
   var nx=$("#next");
-  if(S.step===4){nx.style.display="none"}else{nx.style.display="";nx.textContent=S.step===3?"Récapitulatif":"Suivant"}
+  if(S.step===4){nx.style.display="none"}else{nx.style.display="";nx.innerHTML=(S.step===3?"Récapitulatif":esc(STEPS[S.step+1]))+' <span aria-hidden="true">›</span>'}
   nx.disabled=(S.step===1&&!matiereSel());
 }
 
@@ -300,11 +315,21 @@ function vPuissance(){
 
 function pp(x){return x*nbYeux()}
 function unite(){return nbYeux()===2?"CFA la paire":"CFA (1 verre)"}
+function txtRx(e){var o=S[e];return e.toUpperCase()+" "+dioptrie(o.sph)+" ("+dioptrie(o.cyl)+(o.axe!==""?" à "+o.axe+"°":"")+")"+(o.add?" add "+dioptrie(o.add):"")}
+function txtVerre(){var v=verre(),m=matiereSel();if(!m)return null;return v.nom+" · "+(v.famille.indexOf("Stock")===0?m.matiere.split(" · ").slice(0,2).join(" · "):m.matiere)}
+function txtTrait(){return S.traitement>=0?CAT.traitements[S.traitement].nom:"Sans traitement"}
+function txtCol(){var c=S.coloration>=0?CAT.colorations[S.coloration]:null;return c?c.nom+(c.teinte?" · "+S.couleur+" "+S.intensite:""):"Sans coloration"}
+function resume(){
+  var rows=[["Prescription",yeuxActifs().map(txtRx),0]];
+  if(S.step>1)rows.push(["Verre",txtVerre(),1]);
+  if(S.step>2)rows.push(["Traitement",txtTrait()+(S.options.length?" + "+S.options.length+" option(s)":""),2]);
+  return '<div class="resume">'+rows.map(function(r){return '<button class="r" data-go="'+r[2]+'"><i>✓</i><span><em>'+r[0]+"</em>"+[].concat(r[1]).map(function(x){return "<b>"+esc(x)+"</b>"}).join("")+"</span><u>Modifier</u></button>"}).join("")+"</div>";
+}
 function prixMin(v){return Math.min.apply(null,v.matieres.map(function(m){return m.prix}))}
 function vVerre(){
   var aAdd=yeuxActifs().some(function(e){return S[e].add});
   if(!S.famille)S.famille=aAdd?"Progressif":"Unifocal";
-  var h='<h2>Type de verre</h2><p class="sub">'+(nbYeux()===2?"Prix de la paire":"Prix pour 1 verre")+', sans traitement.</p><div class="chips" id="fam">';
+  var h='<h2>Type de verre</h2><p class="sub">'+(nbYeux()===2?"Prix de la paire":"Prix pour 1 verre")+', sans traitement.</p>'+resume()+'<div class="chips" id="fam">';
   FAMILLES.forEach(function(f){
     var n=CAT.verres.filter(function(v){return v.famille===f}).length; if(!n)return;
     h+='<button class="chip'+(S.famille===f?" on":"")+'" data-f="'+esc(f)+'">'+esc(f)+"<small>"+n+"</small></button>";
@@ -316,9 +341,14 @@ function vVerre(){
   if(v&&v.famille===S.famille){
     var stock=v.famille.indexOf("Stock")===0;
     h+='<div class="picked"><div><span class="hint" style="margin:0">'+esc(v.famille)+" · "+esc(v.gamme)+"</span><br><b>"+esc(v.nom)+"</b>"+(v.nouveau?'<span class="badge">NOUVEAU</span>':"")+'</div><button class="linkbtn" id="chg">Changer</button></div>';
+    var grps=[];v.matieres.forEach(function(m){if(grps.indexOf(m.groupe)<0)grps.push(m.groupe)});
+    if(!stock&&grps.length>1){
+      h+='<div class="chips" id="grp"><button class="chip'+(!S.grp?" on":"")+'" data-g="">Toutes</button>'+grps.map(function(x){return '<button class="chip'+(S.grp===x?" on":"")+'" data-g="'+esc(x)+'">'+esc(x)+"</button>"}).join("")+"</div>";
+    }
     h+='<div class="card">';
     var g=null;
     v.matieres.forEach(function(m,i){
+      if(!stock&&S.grp&&m.groupe!==S.grp&&S.matiere!==i)return;
       if(m.groupe!==g){if(g!==null)h+="</div>";g=m.groupe;h+='<div class="group-title">'+esc(stock?"Matière "+g:g)+'</div><div class="opts">'}
       var lab=stock?m.matiere.split(" · ").slice(1).join(" · "):m.matiere;
       h+='<button class="opt'+(S.matiere===i?" on":"")+'" data-m="'+i+'"><span class="dot"></span><span class="t"><b>'+esc(lab)+'</b></span><span class="p">'+fmt(pp(m.prix))+"<small>"+unite()+"</small></span></button>";
@@ -338,7 +368,7 @@ function vVerre(){
 }
 
 function vTraitement(){
-  var h='<h2>Traitement</h2><p class="sub">Choisissez le traitement de surface. '+(nbYeux()===2?"Prix de la paire.":"Prix pour 1 verre.")+'</p><div class="opts" id="trt">';
+  var h='<h2>Traitement</h2><p class="sub">Choisissez le traitement de surface. '+(nbYeux()===2?"Prix de la paire.":"Prix pour 1 verre.")+'</p>'+resume()+'<div class="opts" id="trt">';
   h+='<button class="opt'+(S.traitement<0?" on":"")+'" data-t="-1"><span class="dot"></span><span class="t"><b>Sans traitement</b></span><span class="p">0</span></button>';
   CAT.traitements.forEach(function(t,i){
     h+='<button class="opt'+(S.traitement===i?" on":"")+'" data-t="'+i+'"><span class="dot"></span><span class="t"><b>'+esc(t.nom)+'</b></span><span class="p">'+(t.prix?"+ "+fmt(pp(t.prix))+"<small>"+unite()+"</small>":"<small>sur devis</small>")+"</span></button>";
@@ -352,7 +382,7 @@ function vTraitement(){
 }
 
 function vColoration(){
-  var h='<h2>Coloration</h2><p class="sub">Teinte ou filtre. '+(nbYeux()===2?"Prix de la paire.":"Prix pour 1 verre.")+'</p><div class="opts" id="col">';
+  var h='<h2>Coloration</h2><p class="sub">Teinte ou filtre. '+(nbYeux()===2?"Prix de la paire.":"Prix pour 1 verre.")+'</p>'+resume()+'<div class="opts" id="col">';
   h+='<button class="opt'+(S.coloration<0?" on":"")+'" data-c="-1"><span class="dot"></span><span class="t"><b>Sans coloration</b></span><span class="p">0</span></button></div>';
   var g=null;
   CAT.colorations.forEach(function(c,i){
@@ -374,9 +404,9 @@ function vColoration(){
 function vEnvoi(){
   var L=lignes(), v=verre();
   var h='<h2>Récapitulatif</h2><p class="sub">Vérifiez la commande avant l’envoi.</p>';
-  h+='<div class="card"><dl class="kv"><dt>Date</dt><dd>'+dateCourte+"</dd><dt>Opticien</dt><dd>"+esc(S.opticien||"—")+"</dd>"+
+  h+='<div class="card"><h3>Opticien<button class="edit" data-go="0">Modifier</button></h3><dl class="kv"><dt>Date</dt><dd>'+dateCourte+"</dd><dt>Opticien</dt><dd>"+esc(S.opticien||"—")+"</dd>"+
      (S.telephone?"<dt>Téléphone</dt><dd>"+esc(S.telephone)+"</dd>":"")+"<dt>Client</dt><dd>"+esc(S.patient||"—")+"</dd></dl></div>";
-  h+='<div class="card"><h3>Prescription</h3><table class="rx"><tr><th></th><th>SPH</th><th>CYL</th><th>AXE</th><th>ADD</th></tr>';
+  h+='<div class="card"><h3>Prescription<button class="edit" data-go="0">Modifier</button></h3><table class="rx"><tr><th></th><th>SPH</th><th>CYL</th><th>AXE</th><th>ADD</th></tr>';
   yeuxActifs().forEach(function(e){var o=S[e];
     h+="<tr><td>"+e.toUpperCase()+"</td><td>"+dioptrie(o.sph)+"</td><td>"+dioptrie(o.cyl)+"</td><td>"+(o.axe!==""?esc(o.axe)+"°":"—")+"</td><td>"+(o.add?dioptrie(o.add):"—")+"</td></tr>";
   });
@@ -384,7 +414,15 @@ function vEnvoi(){
   var mes=yeuxActifs().filter(function(e){return S[e].ep||S[e].h});
   if(mes.length)h+='<p class="hint">'+mes.map(function(e){return e.toUpperCase()+" : "+(S[e].ep?"½ EP "+esc(S[e].ep)+" mm":"")+(S[e].ep&&S[e].h?" · ":"")+(S[e].h?"hauteur "+esc(S[e].h)+" mm":"")}).join("<br>")+"</p>";
   h+="</div>";
-  h+='<div class="card"><h3>Détail et prix</h3><table class="lines">';
+  var cc=S.coloration>=0?CAT.colorations[S.coloration]:null;
+  h+='<div class="card"><h3>Verres<button class="edit" data-go="1">Modifier</button></h3><dl class="kv">'+
+     "<dt>Quantité</dt><dd>"+(S.yeux==="both"?"2 verres (OD + OG)":"1 verre ("+S.yeux.toUpperCase()+")")+"</dd>"+
+     "<dt>Type</dt><dd>"+esc(v.famille)+"</dd><dt>Verre</dt><dd>"+esc(v.nom)+(v.nouveau?' <span class="badge">NOUVEAU</span>':"")+"</dd>"+
+     "<dt>Matière</dt><dd>"+esc(matiereSel().matiere)+"</dd>"+(v.famille.indexOf("Stock")<0?"<dt>Catégorie</dt><dd>"+esc(matiereSel().groupe)+"</dd>":"")+
+     '<dt>Traitement</dt><dd><a href="#" class="linkbtn" data-go="2" style="padding:0">'+esc(txtTrait())+"</a></dd>"+
+     '<dt>Coloration</dt><dd><a href="#" class="linkbtn" data-go="3" style="padding:0">'+esc(txtCol())+"</a></dd>"+
+     (S.options.length?"<dt>Options</dt><dd>"+esc(S.options.map(function(i){return CAT.options[i].nom}).join(", "))+"</dd>":"")+"</dl></div>";
+  h+='<div class="card"><h3>Prix '+(nbYeux()===2?"de la paire":"(1 verre)")+'</h3><table class="lines">';
   L.forEach(function(l){
     h+="<tr><td><b>"+esc(l.cle)+"</b> · "+esc(l.nom)+"<small>"+(l.detail?esc(l.detail)+" · ":"")+(l.devis?"sur devis":(l.q===2?"la paire":"1 verre"))+"</small></td><td>"+(l.devis?"—":fmt(l.pu*l.q))+"</td></tr>";
   });
@@ -392,6 +430,7 @@ function vEnvoi(){
      (L.some(function(l){return l.devis})?'<p class="hint">Les éléments « sur devis » seront chiffrés par Novax.</p>':"")+"</div>";
   h+='<div class="card"><label class="f">Remarques (facultatif)</label><textarea id="notes" placeholder="Monture, diamètre, délai, instructions…">'+esc(S.notes)+"</textarea></div>";
   h+='<div class="stack"><a class="btn wa" id="wa" href="https://wa.me/" target="_blank" rel="noopener" style="text-decoration:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>Envoyer sur WhatsApp</a>'+
+     '<details class="more"><summary>Voir le message qui sera envoyé</summary><pre class="preview" id="pv"></pre></details>'+
      '<button class="btn line" id="cp">Copier le message</button><button class="btn line" id="new">Nouvelle commande</button></div>'+
      '<p class="foot">Tarif : '+esc(CAT.source)+" · Prix en "+esc(CAT.devise)+"</p>";
   return h;
@@ -411,9 +450,10 @@ var bind={
     var cp=$("#copy");if(cp)cp.onclick=function(){S.og=JSON.parse(JSON.stringify(S.od));render();toast("Valeurs OD copiées sur OG")};
   },
   1:function(){
-    $("#fam").onclick=function(ev){var b=ev.target.closest(".chip");if(!b)return;S.famille=b.dataset.f;render()};
-    var chg=$("#chg");if(chg)chg.onclick=function(){S.verreId=null;S.matiere=null;render()};
-    $("#view").querySelectorAll("[data-v]").forEach(function(b){b.onclick=function(){S.verreId=b.dataset.v;S.matiere=null;render();window.scrollTo({top:0,behavior:"smooth"})}});
+    $("#fam").onclick=function(ev){var b=ev.target.closest(".chip");if(!b)return;S.famille=b.dataset.f;S.grp=null;render()};
+    var chg=$("#chg");if(chg)chg.onclick=function(){S.verreId=null;S.matiere=null;S.grp=null;render()};
+    var gp=$("#grp");if(gp)gp.onclick=function(ev){var b=ev.target.closest(".chip");if(!b)return;S.grp=b.dataset.g||null;render()};
+    $("#view").querySelectorAll("[data-v]").forEach(function(b){b.onclick=function(){S.verreId=b.dataset.v;S.matiere=null;S.grp=null;render();window.scrollTo({top:0,behavior:"smooth"})}});
     $("#view").querySelectorAll("[data-m]").forEach(function(b){b.onclick=function(){S.matiere=+b.dataset.m;
       $("#view").querySelectorAll("[data-m]").forEach(function(x){x.classList.toggle("on",x===b)});majBas()}});
   },
@@ -430,7 +470,8 @@ var bind={
     var n=$("#int");if(n)n.onclick=function(ev){var b=ev.target.closest(".chip");if(!b)return;S.intensite=b.dataset.x;render()};
   },
   4:function(){
-    $("#notes").oninput=function(){S.notes=this.value};
+    $("#notes").oninput=function(){S.notes=this.value;$("#pv").textContent=message()};
+    $("#pv").textContent=message();
     $("#wa").onclick=function(ev){
       // Ne jamais quitter la page : sinon écran blanc (aperçus intégrés, hors ligne).
       var msg=message(), txt=encodeURIComponent(msg);
@@ -480,49 +521,61 @@ function numeroCommande(){
 var numCache=null;
 function message(){
   if(!numCache||numCache.etat!==JSON.stringify(S)){numCache={etat:JSON.stringify(S),n:numCache?numCache.n:numeroCommande()}}
-  var v=verre(), m=matiereSel(), L=lignes(), T="```";
-  var out=[];
-  out.push("*BON DE COMMANDE NOVAX*");
-  out.push("N° "+numCache.n);
-  out.push("");
-  out.push("📅 Date : "+dateCourte+" à "+heure());
-  out.push("🏪 Opticien : "+(S.opticien||"—"));
-  if(S.telephone)out.push("📞 Tél. : "+S.telephone);
-  out.push("👤 Client : "+(S.patient||"—"));
-  out.push("");
-  out.push("*1. PRESCRIPTION*");
-  out.push(T);
-  out.push(pad("",4)+pad("SPH",7,1)+pad("CYL",7,1)+pad("AXE",5,1)+pad("ADD",7,1));
-  out.push(new Array(31).join("-"));
-  yeuxActifs().forEach(function(e){var o=S[e];
-    out.push(pad(e.toUpperCase(),4)+pad(dioptrieTxt(o.sph),7,1)+pad(dioptrieTxt(o.cyl),7,1)+pad(o.axe!==""?o.axe+"°":"-",5,1)+pad(o.add?dioptrieTxt(o.add):"-",7,1));
-  });
-  yeuxActifs().forEach(function(e){var o=S[e];if(o.ep||o.h)out.push(pad(e.toUpperCase(),4)+(o.ep?"1/2 EP "+o.ep+" mm  ":"")+(o.h?"H "+o.h+" mm":""))});
-  out.push(T);
-  out.push("");
-  out.push("*2. VERRES* ("+(S.yeux==="both"?"OD + OG":S.yeux==="od"?"OD seul":"OG seul")+")");
-  out.push("• Type : "+v.famille);
-  out.push("• Verre : "+v.nom+(v.nouveau?" (nouveau)":"")+" — gamme "+v.gamme);
-  out.push("• Matière : "+(v.famille.indexOf("Stock")===0?m.matiere:m.matiere+" — "+m.groupe));
-  out.push("• Traitement : "+(S.traitement>=0?CAT.traitements[S.traitement].nom:"Sans traitement"));
+  var v=verre(), m=matiereSel(), L=lignes(), T="```", out=[], Y=yeuxActifs(), stock=v.famille.indexOf("Stock")===0;
+  var trait=function(n){return new Array(n+1).join("-")};
+  var kv=function(k,val){return pad(k,11)+": "+val};
   var c=S.coloration>=0?CAT.colorations[S.coloration]:null;
-  out.push("• Coloration : "+(c?c.nom+(c.teinte?" — "+S.couleur+" "+S.intensite:""):"Sans coloration"));
-  if(S.options.length)out.push("• Options : "+S.options.map(function(i){return CAT.options[i].nom}).join(", "));
+  var qte=S.yeux==="both"?"2 verres (OD + OG)":(S.yeux==="od"?"1 verre (OD seul)":"1 verre (OG seul)");
+
+  out.push("🧾 *COMMANDE NOVAX*");
+  out.push("*N° "+numCache.n+"*");
+  out.push("📅 "+dateCourte+" à "+heure());
   out.push("");
-  out.push("*3. PRIX (CFA)*");
+  out.push("*① OPTICIEN*");
   out.push(T);
-  out.push(pad("Article",16)+pad(nbYeux()===2?"Prix paire":"Prix 1 verre",14,1));
-  out.push(new Array(31).join("-"));
-  L.forEach(function(l){
-    out.push(pad(l.cle==="Option"?l.nom:l.cle,16)+pad(l.devis?"sur devis":fmt(l.pu*l.q),14,1));
+  out.push(kv("Magasin",S.opticien||"—"));
+  if(S.telephone)out.push(kv("Téléphone",S.telephone));
+  out.push(kv("Client",S.patient||"—"));
+  out.push(T);
+  out.push("");
+  out.push("*② PRESCRIPTION*");
+  out.push(T);
+  out.push("Œil|  SPH |  CYL | Axe|  ADD");
+  out.push("---+------+------+----+-----");
+  Y.forEach(function(e){var o=S[e];
+    out.push(pad(e.toUpperCase(),3)+"|"+pad(dioptrieTxt(o.sph),6,1)+"|"+pad(dioptrieTxt(o.cyl),6,1)+"|"+pad(o.axe!==""?o.axe+"°":"-",4,1)+"|"+pad(o.add?dioptrieTxt(o.add):"-",5,1));
   });
-  out.push(new Array(31).join("-"));
-  out.push(pad("TOTAL",12)+pad(fmt(total())+" CFA",18,1));
+  if(Y.some(function(e){return S[e].ep||S[e].h})){
+    out.push("");
+    out.push("Œil| ½ EP mm | Hauteur mm");
+    out.push("---+---------+-----------");
+    Y.forEach(function(e){var o=S[e];out.push(pad(e.toUpperCase(),3)+"|"+pad(o.ep||"-",8,1)+" |"+pad(o.h||"-",10,1))});
+  }
   out.push(T);
-  if(L.some(function(l){return l.devis}))out.push("_Éléments « devis » à chiffrer par Novax._");
-  if(S.notes.trim()){out.push("");out.push("📝 *Remarques :* "+S.notes.trim())}
   out.push("");
-  out.push("Merci de confirmer la réception de la commande.");
+  out.push("*③ VERRES*");
+  out.push(T);
+  out.push(kv("Quantité",qte));
+  out.push(kv("Type",v.famille));
+  out.push(kv("Verre",v.nom+(stock?"":" ("+v.gamme+")")));
+  out.push(kv("Matière",stock?m.matiere:m.matiere));
+  if(!stock)out.push(kv("Catégorie",m.groupe));
+  out.push(kv("Traitement",S.traitement>=0?CAT.traitements[S.traitement].nom:"Aucun"));
+  out.push(kv("Coloration",c?c.nom:"Aucune"));
+  if(c&&c.teinte){out.push(kv("Couleur",S.couleur));out.push(kv("Intensité",S.intensite))}
+  S.options.forEach(function(i,k){out.push(kv(k?"":"Options",CAT.options[i].nom))});
+  out.push(T);
+  out.push("");
+  out.push("*④ PRIX* ("+(nbYeux()===2?"la paire":"1 verre")+", CFA)");
+  out.push(T);
+  L.forEach(function(l){out.push(pad(l.cle==="Option"?l.nom:l.cle,17)+pad(l.devis?"sur devis":fmt(l.pu*l.q),11,1))});
+  out.push(trait(28));
+  out.push(pad("TOTAL",11)+pad(fmt(total())+" CFA",17,1));
+  out.push(T);
+  if(L.some(function(l){return l.devis}))out.push("_« sur devis » : à chiffrer par Novax._");
+  if(S.notes.trim()){out.push("");out.push("📝 *REMARQUES*");out.push(S.notes.trim())}
+  out.push("");
+  out.push("✅ Merci de confirmer la réception.");
   return out.join("\n");
 }
 function copier(t,info){
